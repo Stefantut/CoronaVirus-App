@@ -1,13 +1,18 @@
-const endpoint = "https://api.covid19api.com/stats";
-const stats = {};
+const summaryEndpoint = "https://api.covid19api.com/summary";
 
-fetch(endpoint, {
-  method: "GET",
-})
-  .then((blob) => blob.json())
-  .then((data) => {
-    stats = data;
+let summary = {};
+
+function fetchApi(apiLink) {
+  fetch(apiLink, {
+    method: "GET",
   })
-  .catch((err) => {
-    console.log(err);
-  });
+    .then((blob) => blob.json())
+    .then((data) => {
+      summary = data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+fetchApi(summaryEndpoint);

@@ -5,6 +5,10 @@
 }
 body {
   font-family: $primary-font;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .app-title {
     font-family: $secondary-font;
     text-align: center;
@@ -32,7 +36,7 @@ body {
       justify-content: space-evenly;
       background-color: $tertiary-color;
       min-height: 200px;
-
+      border: 2px dashed $primary-color;
       .title {
         font-size: 20px;
         font-weight: 700;
@@ -53,5 +57,11 @@ body {
         }
       }
     }
+  }
+  footer {
+    text-align: center;
+    padding-bottom: 10px;
+    user-select: none;
+    color: $primary-color;
   }
 }

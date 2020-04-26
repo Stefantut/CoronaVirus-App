@@ -7,6 +7,17 @@
 
 body {
   font-family: "Lato", sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body .app-title {
@@ -54,6 +65,7 @@ body .summary-global .global__box {
           justify-content: space-evenly;
   background-color: #ffbd69;
   min-height: 200px;
+  border: 2px dashed #202040;
 }
 
 body .summary-global .global__box .title {
@@ -80,6 +92,16 @@ body .summary-global .global__box .numbers {
 
 body .summary-global .global__box .numbers:after {
   content: " cases";
+  color: #202040;
+}
+
+body footer {
+  text-align: center;
+  padding-bottom: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #202040;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,13 +1,13 @@
 const summaryEndpoint = "https://api.covid19api.com/summary";
 
 const global = document.querySelector(".summary-global");
-console.log(global);
-const newConfirmed = global.querySelector(".global__box--newconfirmed");
-const newDeaths = global.querySelector(".global__box--newdeaths");
-const newRecovered = global.querySelector(".global__box--newrecovered");
-const totalConfirmed = global.querySelector(".global__box--totalconfirmed");
-const totalDeaths = global.querySelector(".global__box--totaldeaths");
-const totalRecovered = global.querySelector(".global__box--totalrecovered");
+// console.log(global);
+// const newConfirmed = global.querySelector(".global__box--newconfirmed");
+// const newDeaths = global.querySelector(".global__box--newdeaths");
+// const newRecovered = global.querySelector(".global__box--newrecovered");
+// const totalConfirmed = global.querySelector(".global__box--totalconfirmed");
+// const totalDeaths = global.querySelector(".global__box--totaldeaths");
+// const totalRecovered = global.querySelector(".global__box--totalrecovered");
 // let summary = {};
 
 // works with fetch api as well
@@ -35,16 +35,17 @@ async function fetchApi(apiLink) {
 
 // Updates all values
 function updateValues() {
-  fetchApi(summaryEndpoint).then((data) => {
-    let globalSummary = data.Global;
-    newConfirmed.textContent = globalSummary.NewConfirmed;
-    newDeaths.textContent = globalSummary.NewDeaths;
-    newRecovered.textContent = globalSummary.NewRecovered;
-    totalConfirmed.textContent = globalSummary.TotalConfirmed;
-    totalDeaths.textContent = globalSummary.TotalDeaths;
-    totalRecovered.textContent = globalSummary.TotalRecovered;
-
-    // console.log(Object.values(summary.Global));
+  const promise = fetchApi(summaryEndpoint).then((data) => {
+    //converts object to array
+    let globalSummary = Object.entries(data.Global);
+    // creates all elements dinamically
+    globalSummary.forEach((item) => {
+      li = document.createElement("li");
+      li.className +=
+        "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
+      li.innerHTML = `<span class='title'>${item[0]}</span><span class='numbers'>${item[1]}</span>`;
+      global.appendChild(li);
+    });
   });
 }
 

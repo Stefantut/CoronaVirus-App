@@ -4,4 +4,12 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+body .app-title {
+  font-family: "Abel", sans-serif;
+}
 /*# sourceMappingURL=style.css.map */

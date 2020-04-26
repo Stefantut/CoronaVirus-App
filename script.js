@@ -68,4 +68,4 @@ function populateList() {
 updateValues();
 
 // calls the function every 5 minutes
-const updateApi = window.setInterval(updateValues, 5000);
+const updateApi = window.setInterval(updateValues, 50000);

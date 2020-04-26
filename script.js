@@ -61,12 +61,16 @@ function populateList() {
     // used replace to add a space
     li.innerHTML += `<span class='title'>${item[0]
       .toString()
-      .replace(/([A-Z])/g, " $1")}</span><span class='numbers'>${
+      .replace(/([A-Z])/g, " $1")}</span><span class='numbers'>${addDots(
       item[1]
-    } cases</span>`;
+    )} cases</span>`;
     globalList.appendChild(li);
     listContent = true;
   });
+}
+
+function addDots(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
 // calls the function on page load

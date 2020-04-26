@@ -23,7 +23,7 @@ body .app-title {
 }
 
 body .app-title:hover {
-  color: #c90000;
+  color: #ad102f;
 }
 
 body .summary-global {
@@ -49,15 +49,37 @@ body .summary-global .global__box {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #ffbd69;
+  min-height: 200px;
 }
 
 body .summary-global .global__box .title {
-  margin-bottom: 10px;
+  font-size: 20px;
   font-weight: 700;
-  color: #ff6363;
+  color: #202040;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  user-select: none;
+}
+
+body .summary-global .global__box .title:hover {
+  color: #ad102f;
+}
+
+body .summary-global .global__box .numbers {
+  color: #dc143c;
+  font-size: 18px;
+}
+
+body .summary-global .global__box .numbers:after {
+  content: " cases";
+  color: #202040;
 }
 /*# sourceMappingURL=style.css.map */

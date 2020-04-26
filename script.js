@@ -59,11 +59,9 @@ function populateList() {
     li.className +=
       "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
     // used replace to add a space
-    li.innerHTML += `<span class='title'>${item[0]
-      .toString()
-      .replace(/([A-Z])/g, " $1")}</span><span class='numbers'>${addDots(
-      item[1]
-    )} cases</span>`;
+    li.innerHTML += `<span class='title'>${addSpace(
+      item[0]
+    )}</span><span class='numbers'>${addDots(item[1])}</span>`;
     globalList.appendChild(li);
     listContent = true;
   });
@@ -71,6 +69,10 @@ function populateList() {
 
 function addDots(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function addSpace(number) {
+  return number.toString().replace(/([A-Z])/g, " $1");
 }
 
 // calls the function on page load

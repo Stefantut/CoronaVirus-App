@@ -58,7 +58,12 @@ function populateList() {
     li = document.createElement("li");
     li.className +=
       "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
-    li.innerHTML += `<span class='title'>${item[0]}</span><span class='numbers'>${item[1]}</span>`;
+    // used replace to add a space
+    li.innerHTML += `<span class='title'>${item[0]
+      .toString()
+      .replace(/([A-Z])/g, " $1")}</span><span class='numbers'>${
+      item[1]
+    } cases</span>`;
     globalList.appendChild(li);
     listContent = true;
   });

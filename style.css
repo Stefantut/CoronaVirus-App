@@ -11,5 +11,53 @@ body {
 
 body .app-title {
   font-family: "Abel", sans-serif;
+  text-align: center;
+  color: #202040;
+  margin: 20px 0;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body .app-title:hover {
+  color: #c90000;
+}
+
+body .summary-global {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1em;
+  grid-row-gap: 2em;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+body .summary-global .global__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .summary-global .global__box .title {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #ff6363;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 /*# sourceMappingURL=style.css.map */

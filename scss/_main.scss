@@ -50,9 +50,11 @@ body {
       .numbers {
         color: $secondary-color;
         font-size: 18px;
+        font-weight: 700;
         &:after {
           content: " cases";
           color: $primary-color;
+          font-weight: 400;
         }
       }
     }

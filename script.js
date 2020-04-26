@@ -1,15 +1,7 @@
 const summaryEndpoint = "https://api.covid19api.com/summary";
 
 const globalList = document.querySelector(".summary-global");
-// console.log(global);
-// const newConfirmed = global.querySelector(".global__box--newconfirmed");
-// const newDeaths = global.querySelector(".global__box--newdeaths");
-// const newRecovered = global.querySelector(".global__box--newrecovered");
-// const totalConfirmed = global.querySelector(".global__box--totalconfirmed");
-// const totalDeaths = global.querySelector(".global__box--totaldeaths");
-// const totalRecovered = global.querySelector(".global__box--totalrecovered");
 let globalSummary;
-
 // works with fetch api as well
 // function fetchApi(apiLink) {
 //   fetch(apiLink, {
@@ -26,7 +18,7 @@ let globalSummary;
 // }
 // fetchApi(summaryEndpoint);
 
-// Used async/await
+// Used async/await to retrieve api data
 async function fetchApi(apiLink) {
   let response = await fetch(apiLink);
   let data = await response.json();

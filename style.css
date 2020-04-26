@@ -87,11 +87,13 @@ body .summary-global .global__box .title:hover {
 body .summary-global .global__box .numbers {
   color: #dc143c;
   font-size: 18px;
+  font-weight: 700;
 }
 
 body .summary-global .global__box .numbers:after {
   content: " cases";
   color: #202040;
+  font-weight: 400;
 }
 
 body footer {

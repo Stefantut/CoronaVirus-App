@@ -40,7 +40,6 @@ body .app-title:hover {
 body .summary-global {
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 40px;
   display: -ms-grid;
   display: grid;
   grid-gap: 1em;

@@ -1,6 +1,6 @@
 const summaryEndpoint = "https://api.covid19api.com/summary";
 
-const global = document.querySelector(".summary-global");
+const globalList = document.querySelector(".summary-global");
 // console.log(global);
 // const newConfirmed = global.querySelector(".global__box--newconfirmed");
 // const newDeaths = global.querySelector(".global__box--newdeaths");
@@ -8,7 +8,7 @@ const global = document.querySelector(".summary-global");
 // const totalConfirmed = global.querySelector(".global__box--totalconfirmed");
 // const totalDeaths = global.querySelector(".global__box--totaldeaths");
 // const totalRecovered = global.querySelector(".global__box--totalrecovered");
-// let summary = {};
+let globalSummary;
 
 // works with fetch api as well
 // function fetchApi(apiLink) {
@@ -32,20 +32,35 @@ async function fetchApi(apiLink) {
   let data = await response.json();
   return data;
 }
-
+let listContent = false;
 // Updates all values
 function updateValues() {
   const promise = fetchApi(summaryEndpoint).then((data) => {
     //converts object to array
-    let globalSummary = Object.entries(data.Global);
-    // creates all elements dinamically
-    globalSummary.forEach((item) => {
-      li = document.createElement("li");
-      li.className +=
-        "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
-      li.innerHTML = `<span class='title'>${item[0]}</span><span class='numbers'>${item[1]}</span>`;
-      global.appendChild(li);
-    });
+    globalSummary = Object.entries(data.Global);
+
+    // if the list is populated delete all content - fix for api update
+    if (listContent) {
+      while (globalList.firstChild) {
+        globalList.removeChild(globalList.firstChild);
+      }
+    }
+
+    // add content
+    populateList();
+  });
+}
+
+// Populate list
+function populateList() {
+  // creates all elements dinamically
+  globalSummary.forEach((item) => {
+    li = document.createElement("li");
+    li.className +=
+      "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
+    li.innerHTML += `<span class='title'>${item[0]}</span><span class='numbers'>${item[1]}</span>`;
+    globalList.appendChild(li);
+    listContent = true;
   });
 }
 
@@ -53,4 +68,4 @@ function updateValues() {
 updateValues();
 
 // calls the function every 5 minutes
-const updateApi = window.setInterval(updateValues, 50000);
+const updateApi = window.setInterval(updateValues, 5000);

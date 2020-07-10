@@ -2,21 +2,6 @@ const summaryEndpoint = "https://api.covid19api.com/summary";
 
 const globalList = document.querySelector(".summary-global");
 let globalSummary;
-// works with fetch api as well
-// function fetchApi(apiLink) {
-//   fetch(apiLink, {
-//     method: "GET",
-//   })
-//     .then((blob) => blob.json())
-//     .then((data) => {
-//       summary = data;
-//       newConfirmed.textContent = summary.Global.NewConfirmed;
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
-// fetchApi(summaryEndpoint);
 
 // Used async/await to retrieve api data
 async function fetchApi(apiLink) {

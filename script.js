@@ -57,3 +57,14 @@ updateValues();
 
 // calls the function every 5 minutes
 const updateApi = window.setInterval(updateValues, 50000);
+
+const yearField = document.querySelector(".year");
+
+// Display year
+function currentYear(item) {
+  const date = new Date();
+  const year = date.getFullYear();
+  item.innerHTML = year;
+}
+
+currentYear(yearField);

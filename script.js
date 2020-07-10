@@ -3,7 +3,7 @@ const summaryEndpoint = "https://api.covid19api.com/summary";
 const globalList = document.querySelector(".summary-global");
 let globalSummary;
 
-// Used async/await to retrieve api data
+// Retrieve api data
 async function fetchApi(apiLink) {
   let response = await fetch(apiLink);
   let data = await response.json();

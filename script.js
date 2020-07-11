@@ -70,7 +70,7 @@ function addSpace(number) {
 updateValues();
 
 // calls the function every 5 minutes
-const updateApi = window.setInterval(updateValues, 50000);
+const updateApi = window.setInterval(updateValues, 500000);
 
 // Display year
 function currentYear(item) {

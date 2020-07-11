@@ -1,7 +1,16 @@
 const summaryEndpoint = "https://api.covid19api.com/summary";
 
 const globalList = document.querySelector(".summary-global");
+const yearField = document.querySelector(".year");
+
 let globalSummary;
+
+// generate a random color
+function randomColor() {
+  const colors = ["#87d4c5", "#f3ecc2", "#f6bed6", "#e4f9ff", "#ffcb74"];
+  color = colors[Math.floor(Math.random() * colors.length)];
+  return color;
+}
 
 // Retrieve api data
 async function fetchApi(apiLink) {
@@ -9,7 +18,9 @@ async function fetchApi(apiLink) {
   let data = await response.json();
   return data;
 }
+
 let listContent = false;
+
 // Updates all values
 function updateValues() {
   const promise = fetchApi(summaryEndpoint).then((data) => {
@@ -35,6 +46,9 @@ function populateList() {
     li = document.createElement("li");
     li.className +=
       "global__box" + " " + "global__box--" + `${item[0].toLowerCase()}`;
+    li.style.backgroundColor = `${randomColor()}`;
+    li.style.animation = "pulse 1s 2";
+
     // used replace to add a space
     li.innerHTML += `<span class='title'>${addSpace(
       item[0]
@@ -57,8 +71,6 @@ updateValues();
 
 // calls the function every 5 minutes
 const updateApi = window.setInterval(updateValues, 50000);
-
-const yearField = document.querySelector(".year");
 
 // Display year
 function currentYear(item) {

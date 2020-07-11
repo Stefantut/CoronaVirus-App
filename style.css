@@ -63,7 +63,6 @@ body .summary-global .global__box {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-color: #ffbd69;
   min-height: 200px;
   border: 2px dashed #202040;
 }
@@ -105,5 +104,38 @@ body footer {
       -ms-user-select: none;
           user-select: none;
   color: #202040;
+  font-size: 14px;
+}
+
+body footer .link,
+body footer .year,
+body footer .copy {
+  text-decoration: none;
+  color: seagreen;
+  font-weight: bold;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
 }
 /*# sourceMappingURL=style.css.map */

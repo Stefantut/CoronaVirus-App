@@ -2,7 +2,9 @@ CoronaVirus App
 
 ####
 
-I’ve used VanillaJS, async/await to retrieve API Data, Sass for styling and BEM for class names.
+I’ve used VanillaJS, fetchApi to retrieve API Data, Sass for styling and BEM for class names.
 
-🚀 I used CSS Grid and made it fully responsive without using media queries. 
+🚀 I used CSS Grid and made it fully responsive without using media queries.
 🚀 The API updates every 5 minutes and all the items are created dynamically through JavaScript.
+
+![Preview Image](corona-app.png)

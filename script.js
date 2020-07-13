@@ -69,8 +69,8 @@ function addSpace(number) {
 // calls the function on page load
 updateValues();
 
-// calls the function every 5 minutes
-const updateApi = window.setInterval(updateValues, 500000);
+// calls the function every 5 minutes - changed to 6 hours - api requests limit
+const updateApi = window.setInterval(updateValues, 600000);
 
 // Display year
 function currentYear(item) {
